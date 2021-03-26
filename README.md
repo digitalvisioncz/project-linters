@@ -1,0 +1,1 @@
+# Digital Vision default linter configs
