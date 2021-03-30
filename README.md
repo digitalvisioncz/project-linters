@@ -1,1 +1,1 @@
-# Digital Vision default linter configs
+# DV Default linter configs
