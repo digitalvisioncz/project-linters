@@ -1,7 +1,7 @@
 {
-  "name": "root",
-  "private": true,
-  "devDependencies": {
-    "lerna": "^4.0.0"
+  "name": "project-linters",
+  "author": {
+    "name": "Digital Vision CZ",
+    "url": "https://digitalvision.cz"
   }
 }
