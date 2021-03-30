@@ -1,11 +1,11 @@
 {
   "name": "@digitalvisioncz/eslint-config-base",
-  "version": "0.1.0",
+  "version": "0.3.0",
+  "licence": "MIT",
   "main": "./config.js",
   "dependencies": {
-    "eslint": "^7.22.0",
+    "eslint": "^7.23.0",
     "eslint-config-airbnb-base": "^14.2.1",
-    "eslint-loader": "^3.0.3",
     "eslint-plugin-import": "^2.22.1"
   },
   "publishConfig": {
