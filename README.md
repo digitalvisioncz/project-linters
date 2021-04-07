@@ -32,7 +32,7 @@ In the project where you want to use linters, do the following:
 yarn add -D @digitalvisioncz/eslint-config-react
 ```
 3. Add following to your package.json (or add `extends` to your `.eslintrc` or `.stylelintrc` config)
-```json
+```js
 "eslint": {
   "extends": [
       // in case of React
@@ -42,7 +42,7 @@ yarn add -D @digitalvisioncz/eslint-config-react
   ]
 }
 ```
-```json
+```js
 "stylelint": {
   "extends": "@digitalvisioncz/stylelint-config"
 }
