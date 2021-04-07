@@ -1,6 +1,6 @@
 {
   "name": "@digitalvisioncz/eslint-config-react",
-  "version": "1.0.1",
+  "version": "1.0.0",
   "licence": "MIT",
   "author": {
     "name": "Digital Vision CZ",
@@ -8,7 +8,7 @@
   },
   "main": "./config.js",
   "dependencies": {
-    "@digitalvisioncz/eslint-config-base": "^1.0.1",
+    "@digitalvisioncz/eslint-config-base": "^1.0.0",
     "eslint": "^7.23.0",
     "eslint-plugin-jsx-a11y": "^6.4.1",
     "eslint-plugin-react": "^7.23.1",
