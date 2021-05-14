@@ -1,5 +1,8 @@
 module.exports = {
     plugins: ['react', 'react-hooks'],
+    parserOptions: {
+        ecmaFeatures: {jsx: true},
+    },
     extends: [
         '@digitalvisioncz/eslint-config-base', 
         'plugin:react/recommended', 
@@ -43,7 +46,22 @@ module.exports = {
             },
         ],
 
+        // Forbid unnecessary rules for React v17
+        'react/jsx-uses-react': 'off',
+        'react/react-in-jsx-scope': 'off',
+
         // Turn off things that handle NextJS
         'jsx-a11y/anchor-is-valid': 0,
+    },
+    settings: {
+        'import/resolver': {
+            node: {
+                extensions: ['.js', '.jsx'],
+            },
+        },
+        react: {
+            pragma: 'React',
+            version: 'detect',
+        },
     },
 };
