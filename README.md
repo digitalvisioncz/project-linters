@@ -18,19 +18,19 @@ Run following command in your terminal
 `npm login --scope=@digitalvisioncz --registry=https://npm.pkg.github.com`  
 It will prompt you to input your GitHub username, password (this will be your [personal access token](https://github.com/settings/tokens/new) with ` read:packages` scope) and public e-mail address. 
 
-
 ### Install and config
 In the project where you want to use linters, do the following:
 
-1. Create `.lintstagedrc` and add the following code
-
+1. Create `.npmrc` and add the following code
 ```PlainText
 @digitalvisioncz:registry=https://npm.pkg.github.com
 ```
+
 2. Install required linter config(s), for example
 ```sh
 yarn add -D @digitalvisioncz/eslint-config-react
 ```
+
 3. Add following to your package.json (or add `extends` to your `.eslintrc` or `.stylelintrc` config)
 ```js
 "eslint": {
@@ -58,12 +58,14 @@ To add a pre-commit task:
 ```sh
 yarn add husky lint-staged -D
 ```
+
 2. Automatically install pre-commit hook and add script to your package.json
 ```sh
 npx husky install && \
 npx husky add .husky/pre-commit "yarn pre-commit" && \
 npx npm-add-script -k pre-commit -v "lint-staged"
 ```
+
 3. Create `.lintstagedrc` and add the following code (omit stylelint if it's not needed)
 ```json
 {
