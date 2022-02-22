@@ -1,6 +1,6 @@
 {
   "name": "@digitalvisioncz/stylelint-config",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "licence": "MIT",
   "author": {
     "name": "Digital Vision CZ",
@@ -8,7 +8,7 @@
   },
   "main": "./config.js",
   "dependencies": {
-    "stylelint": "^13.12.0",
+    "stylelint": "^14.0.0",
     "stylelint-a11y": "^1.2.3",
     "stylelint-config-recommended": "^4.0.0",
     "stylelint-csstree-validator": "^1.9.0",
