@@ -58,28 +58,6 @@ module.exports = {
         // Enforce consistent spacing inside braces
         'object-curly-spacing': ['error', 'never'],
 
-        'object-property-newline': [2],
-        'object-curly-newline': [
-            'error', {
-                ObjectExpression: {
-                    multiline: true,
-                    minProperties: 3,
-                },
-                ObjectPattern:  {
-                    multiline: true,
-                    minProperties: 3,
-                },
-                ImportDeclaration: {
-                    multiline: true,
-                    minProperties: 3,
-                },
-                ExportDeclaration: {
-                    multiline: true,
-                    minProperties: 3,
-                },
-            },
-        ],
-
         // Enforce a maximum line length
         'max-len': [
             'error', {
