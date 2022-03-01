@@ -52,6 +52,45 @@ module.exports = {
 
         // Turn off things that handle NextJS
         'jsx-a11y/anchor-is-valid': 0,
+
+
+        // File must have .jsx extension when using JSX syntax
+        'react/jsx-filename-extension': [1, {allow: 'as-needed'}],
+
+        // React components must use PascalCase when using in code
+        'react/jsx-pascal-case': [2],
+
+        'react/jsx-max-props-per-line': [
+            2, {
+                maximum: {
+                    single: 2,
+                    multi: 1,
+                },
+            },
+        ],
+        'react/jsx-first-prop-new-line': [2, 'multiline'],
+        'react/jsx-closing-bracket-location': [2, 'line-aligned'],
+        'react/jsx-closing-tag-location': [2],
+
+        'react/jsx-wrap-multilines': [
+            2, {
+                declaration: 'parens-new-line',
+                assignment: 'parens-new-line',
+                return: 'parens-new-line',
+                arrow: 'parens-new-line',
+                condition: 'parens-new-line',
+                logical: 'parens-new-line',
+                prop: 'parens-new-line',
+            },
+        ],
+        'react/jsx-curly-spacing': [2],
+
+        'react/self-closing-comp': [
+            2, {
+                component: true,
+                html: false,
+            },
+        ],
     },
     settings: {
         'import/resolver': {

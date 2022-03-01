@@ -1,6 +1,6 @@
 {
   "name": "@digitalvisioncz/eslint-config-base",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "licence": "MIT",
   "author": {
     "name": "Digital Vision CZ",
@@ -8,9 +8,9 @@
   },
   "main": "./config.js",
   "dependencies": {
-    "eslint": "^7.23.0",
-    "eslint-config-airbnb-base": "^14.2.1",
-    "eslint-plugin-import": "^2.22.1"
+    "eslint": "^8.10.0",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-plugin-import": "^2.25.4"
   },
   "publishConfig": {
     "registry": "https://npm.pkg.github.com"
