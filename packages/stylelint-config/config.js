@@ -75,11 +75,15 @@ module.exports = {
         'block-opening-brace-newline-before': 'never-single-line',
         'block-opening-brace-space-before': 'always',
         'csstree/validator': {
-            ignore: [
+            properties: {
+                content: '| attr( <custom-ident> )',
+                width: '| <min()> | <max()> | <clamp()>',
+                padding: '| <min()> | <max()> | <clamp()>',
+                'font-size': '| <min()> | <max()> | <clamp()>',
+            },
+            ignoreProperties: [
                 'composes',
                 'scrollbar-width',
-                'left',
-                'min-height',
             ],
         },
         'color-hex-case': 'lower',
@@ -146,7 +150,7 @@ module.exports = {
         'property-no-vendor-prefix': true,
         'property-no-unknown': [
             true, {
-                ignoreProperties: ['composes'],
+                ignoreProperties: ['composes', 'appearance'],
             },
         ],
         'order/order': [
@@ -351,6 +355,7 @@ module.exports = {
             'border-left-width',
             'border-left-color',
         ],
+        'rule-empty-line-before': 'always',
         'selector-attribute-brackets-space-inside': 'never',
         'selector-attribute-operator-space-after': 'always',
         'selector-attribute-operator-space-before': 'always',
