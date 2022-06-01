@@ -1,0 +1,14 @@
+{
+    "name": "@digitalvisioncz/typescript-config",
+    "version": "1.0.0",
+    "licence": "MIT",
+    "author": {
+        "name": "Digital Vision CZ",
+        "url": "https://digitalvision.cz"
+    },
+    "main": "tsconfig.json",
+    "publishConfig": {
+        "registry": "https://npm.pkg.github.com"
+    },
+    "repository": "https://github.com/digitalvisioncz/project-linters"
+}

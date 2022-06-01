@@ -4,10 +4,14 @@ Currently, we are using the following configs:
 ### Eslint
 `@digitalvisioncz/eslint-config-base`  
 `@digitalvisioncz/eslint-config-react` *for React projects*
-> **_NOTE:_**  React config already contains base config, so there is no need to install both
+`@digitalvisioncz/eslint-config-typescript` *for Typescript projects*
+> **_NOTE:_**  React config and typescript already contains base config, so there is no need to install both
 
 ### Stylelint
 `@digitalvisioncz/stylelint-config` *with PostCss*
+
+#### TSconfig
+`@digitalvisioncz/typescript-config`
 
 ## How to use
 
@@ -35,10 +39,12 @@ yarn add -D @digitalvisioncz/eslint-config-react
 ```js
 "eslint": {
   "extends": [
+      // in case of Typescript
+      "@digitalvisioncz/eslint-config-typescript",
       // in case of React
-      "@digitalvisioncz/eslint-config-react"
+      "@digitalvisioncz/eslint-config-react",
       // in case of NodeJs
-      "@digitalvisioncz/eslint-config-base"
+      "@digitalvisioncz/eslint-config-base",
   ]
 }
 ```
@@ -47,7 +53,13 @@ yarn add -D @digitalvisioncz/eslint-config-react
   "extends": "@digitalvisioncz/stylelint-config"
 }
 ```
+4. If a typescript project add following to your tsconfig.json
+```json
+{
+  "extends": "@digitalvisioncz/typescript-config"
+}
 
+```
 ## Adding a pre-commit hook
 
 Linting makes more sense when running before committing the code.
