@@ -4,8 +4,8 @@ module.exports = {
         ecmaFeatures: {jsx: true},
     },
     extends: [
-        '@digitalvisioncz/eslint-config-base', 
-        'plugin:react/recommended', 
+        '@digitalvisioncz/eslint-config-base',
+        'plugin:react/recommended',
         'plugin:jsx-a11y/recommended',
     ],
     rules: {
@@ -55,7 +55,10 @@ module.exports = {
 
 
         // File must have .jsx extension when using JSX syntax
-        'react/jsx-filename-extension': [1, {allow: 'as-needed'}],
+        'react/jsx-filename-extension': [1, {
+            allow: 'as-needed',
+            extensions: [".tsx", ".jsx"]
+        }],
 
         // React components must use PascalCase when using in code
         'react/jsx-pascal-case': [2],

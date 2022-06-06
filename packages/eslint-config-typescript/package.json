@@ -1,6 +1,6 @@
 {
-  "name": "@digitalvisioncz/eslint-config-react",
-  "version": "1.0.7",
+  "name": "@digitalvisioncz/eslint-config-typescript",
+  "version": "1.0.0",
   "licence": "MIT",
   "author": {
     "name": "Digital Vision CZ",
@@ -9,10 +9,8 @@
   "main": "./config.js",
   "dependencies": {
     "@digitalvisioncz/eslint-config-base": "^1.0.4",
-    "eslint": "^8.10.0",
-    "eslint-plugin-jsx-a11y": "^6.4.1",
-    "eslint-plugin-react": "^7.29.2",
-    "eslint-plugin-react-hooks": "^4.3.0"
+    "@typescript-eslint/eslint-plugin": "^4.31.1",
+    "@typescript-eslint/parser": "^4.31.1"
   },
   "publishConfig": {
     "registry": "https://npm.pkg.github.com"
