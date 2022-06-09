@@ -11,8 +11,18 @@ module.exports = {
                 extensions: ['.js', '.jsx', '.mjs', '.ts', '.tsx', '.mts', '.json'],
             },
         },
+    },
+    rules: {
         'import/extensions': [
-            '.js', '.jsx', '.mjs', '.ts', '.tsx', '.mts'
+            'error',
+            'ignorePackages',
+            {
+                js: 'never',
+                mjs: 'never',
+                jsx: 'never',
+                ts: 'never',
+                tsx: 'never',
+            },
         ],
     },
 };
