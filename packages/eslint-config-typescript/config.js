@@ -153,6 +153,9 @@ module.exports = {
                     "requireLast": false
                 }
             }
-        ]
+        ],
+
+        "space-infix-ops": "off",
+        "@typescript-eslint/space-infix-ops": ["error"]
     },
 };
