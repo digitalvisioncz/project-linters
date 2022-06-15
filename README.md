@@ -53,7 +53,7 @@ yarn add -D @digitalvisioncz/eslint-config-react
   "extends": "@digitalvisioncz/stylelint-config"
 }
 ```
-4. If a typescript project add following to your tsconfig.json
+4. If a typescript project, add the following to your tsconfig.json
 ```json
 {
   "extends": "@digitalvisioncz/typescript-config"
