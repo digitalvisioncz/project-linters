@@ -156,6 +156,8 @@ module.exports = {
         ],
 
         "space-infix-ops": "off",
-        "@typescript-eslint/space-infix-ops": ["error"]
+        "@typescript-eslint/space-infix-ops": ["error"],
+        'no-shadow': 'off',
+        '@typescript-eslint/no-shadow': ['error'],
     },
 };
