@@ -48,17 +48,11 @@ module.exports = {
         '@typescript-eslint/comma-dangle': [
             baseStyleRules['comma-dangle'][0], {
                 ...baseStyleRules['comma-dangle'][1],
-                enums: baseStyleRules['comma-dangle'][1].arrays,
-                generics: baseStyleRules['comma-dangle'][1].arrays,
-                tuples: baseStyleRules['comma-dangle'][1].arrays,
             },
         ],
 
         'comma-spacing': 'off',
         '@typescript-eslint/comma-spacing': baseStyleRules['comma-spacing'],
-
-        'space-before-blocks': 'off',
-        '@typescript-eslint/space-before-blocks': baseStyleRules['space-before-blocks'],
 
         'dot-notation': 'off',
         '@typescript-eslint/dot-notation': baseBestPracticesRules['dot-notation'],
@@ -159,5 +153,8 @@ module.exports = {
         "@typescript-eslint/space-infix-ops": ["error"],
         'no-shadow': 'off',
         '@typescript-eslint/no-shadow': ['error'],
+
+        // force handled promises
+        "@typescript-eslint/no-floating-promises": "error"
     },
 };
