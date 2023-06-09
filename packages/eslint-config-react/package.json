@@ -17,5 +17,6 @@
   "repository": "https://github.com/digitalvisioncz/project-linters",
   "devDependencies": {
     "lerna": "^7.0.0"
-  }
+  },
+  "gitHead": "f9c16b9865eb10c239b2eb96c5a37dd938e32af9"
 }
