@@ -1,5 +1,5 @@
 {
-  "name": "@digitalvisioncz/eslint-config-react",
+  "name": "@dvdevcz/eslint-config-react",
   "version": "1.0.7",
   "licence": "MIT",
   "author": {
@@ -8,14 +8,14 @@
   },
   "main": "./config.js",
   "dependencies": {
-    "@digitalvisioncz/eslint-config-base": "1.0.4",
+    "@dvdevcz/eslint-config-base": "1.0.4",
     "eslint": "^8.10.0",
     "eslint-plugin-jsx-a11y": "^6.4.1",
     "eslint-plugin-react": "^7.29.2",
     "eslint-plugin-react-hooks": "^4.3.0"
   },
-  "publishConfig": {
-    "registry": "https://npm.pkg.github.com"
-  },
-  "repository": "https://github.com/digitalvisioncz/project-linters"
+  "repository": "https://github.com/digitalvisioncz/project-linters",
+  "devDependencies": {
+    "lerna": "^7.0.0"
+  }
 }
