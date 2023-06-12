@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.0.4](https://github.com/digitalvisioncz/project-linters/compare/@dvdevcz/eslint-config-typescript@0.0.3...@dvdevcz/eslint-config-typescript@0.0.4) (2023-06-12)
+
+
+### Bug Fixes
+
+* **eslint-config-typescript:** array items on new line ([f8ffdd3](https://github.com/digitalvisioncz/project-linters/commit/f8ffdd3f5600aa362f3809473f454c72acbb7e70))
+
+
+
+
+
 ## [0.0.3](https://github.com/digitalvisioncz/project-linters/compare/@dvdevcz/eslint-config-typescript@0.0.2...@dvdevcz/eslint-config-typescript@0.0.3) (2023-06-12)
 
 
