@@ -9,6 +9,11 @@ jobs:
   publish:
     if: github.event.pull_request.merged == true
     runs-on: ubuntu-latest
+    env:
+      GH_TOKEN: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
+      GITHUB_TOKEN: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
+      NPM_TOKEN: ${{ secrets.NPM_PUBLISH_TOKEN }}
+      NODE_AUTH_TOKEN: ${{ secrets.NPM_PUBLISH_TOKEN }}
 
     steps:
     - uses: actions/checkout@v3
@@ -27,10 +32,11 @@ jobs:
         git config --global user.email "${{ github.actor }}@users.noreply.github.com"
         git remote set-url origin https://${{ github.actor }}:${{ secrets.PERSONAL_ACCESS_TOKEN }}@github.com/${{ github.repository }}
 
+    - name: "NPM Identity"
+      run: |
+        echo "//registry.npmjs.org/:_authToken=$NPM_TOKEN" > .npmrc
+
     - name: "Version and publish"
-      env:
-        GH_TOKEN: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
-        NODE_AUTH_TOKEN: ${{secrets.NPM_PUBLISH_TOKEN}}
       run: |
         npx lerna version --yes --conventional-commits --create-release github --message 'chore(release): publish'
-        npx lerna publish from-package --yes --no-private
+        npx lerna publish from-package --no-verify-access --yes
