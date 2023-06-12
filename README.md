@@ -2,61 +2,57 @@
 Currently, we are using the following configs:
 
 ### Eslint
-`@digitalvisioncz/eslint-config-base`  
-`@digitalvisioncz/eslint-config-react` *for React projects*
-`@digitalvisioncz/eslint-config-typescript` *for Typescript projects*
+`@dvdevcz/eslint-config-base`  
+`@dvdevcz/eslint-config-react` *for React projects*
+`@dvdevcz/eslint-config-typescript` *for Typescript projects*
 > **_NOTE:_**  React config and typescript already contains base config, so there is no need to install both
 
 ### Stylelint
-`@digitalvisioncz/stylelint-config` *with PostCss*
+`@dvdevcz/stylelint-config` *with PostCss*
 
 #### TSconfig
-`@digitalvisioncz/typescript-config`
+`@dvdevcz/typescript-config`
 
 ## How to use
-
-### Pre-requisits
-All linter configs are available as NPM packages using Github Packages. At this time, you need to be logged in to the GitHub npm registry to use this package (even if they are public). Hopefully, in the future, GH will omit this step.
-
-Run following command in your terminal  
-`npm login --scope=@digitalvisioncz --registry=https://npm.pkg.github.com`  
-It will prompt you to input your GitHub username, password (this will be your [personal access token](https://github.com/settings/tokens/new) with ` read:packages` scope) and public e-mail address. 
 
 ### Install and config
 In the project where you want to use linters, do the following:
 
-1. Create `.npmrc` and add the following code
-```PlainText
-@digitalvisioncz:registry=https://npm.pkg.github.com
-```
-
-2. Install required linter config(s), for example
+1. Install required linter config(s)
 ```sh
-yarn add -D @digitalvisioncz/eslint-config-react
+yarn add -D @dvdevcz/eslint-config-base
+# OR
+yarn add -D @dvdevcz/eslint-config-react
+# OR
+yarn add -D @dvdevcz/eslint-config-typescript
+# OR
+yarn add -D @dvdevcz/stylelint-config
+# OR
+yarn add -D @dvdevcz/typescript-config
 ```
 
-3. Add following to your package.json (or add `extends` to your `.eslintrc` or `.stylelintrc` config)
+2. Add following to your package.json (or add `extends` to your `.eslintrc` or `.stylelintrc` config)
 ```js
 "eslint": {
   "extends": [
       // in case of Typescript
-      "@digitalvisioncz/eslint-config-typescript",
+      "@dvdevcz/eslint-config-typescript",
       // in case of React
-      "@digitalvisioncz/eslint-config-react",
+      "@dvdevcz/eslint-config-react",
       // in case of NodeJs
-      "@digitalvisioncz/eslint-config-base",
+      "@dvdevcz/eslint-config-base",
   ]
 }
 ```
 ```js
 "stylelint": {
-  "extends": "@digitalvisioncz/stylelint-config"
+  "extends": "@dvdevcz/stylelint-config/config"
 }
 ```
-4. If a typescript project, add the following to your tsconfig.json
+3. In a typescript project, add the following to your tsconfig.json
 ```json
 {
-  "extends": "@digitalvisioncz/typescript-config"
+  "extends": "@dvdevcz/typescript-config"
 }
 
 ```

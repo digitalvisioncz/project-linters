@@ -1,7 +1,10 @@
 {
   "name": "@dvdevcz/project-linters",
   "licence": "MIT",
-  "author": "Digital Vision CZ (https://digitalvision.cz)",
+  "author": {
+    "name": "Digital Vision CZ",
+    "url": "https://digitalvision.cz"
+  },
   "packageManager": "yarn@3.6.0",
   "workspaces": [
     "packages/*"
