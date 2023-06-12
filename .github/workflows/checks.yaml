@@ -17,10 +17,10 @@ jobs:
       with: 
         node-version: '16'
 
-    - name: Install dependencies
-      run: |
-        yarn
-        npx lerna bootstrap
+    # - name: Install dependencies
+    #   run: |
+    #     yarn
+    #     npx lerna bootstrap
 
     # - name: Run tests
     #   run: npx lerna exec npm run test

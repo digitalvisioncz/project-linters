@@ -1,7 +1,9 @@
 module.exports = {
     plugins: ['react', 'react-hooks'],
     parserOptions: {
-        ecmaFeatures: {jsx: true},
+        ecmaFeatures: {
+            jsx: true
+        },
     },
     extends: [
         '@digitalvisioncz/eslint-config-base',
