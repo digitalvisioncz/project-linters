@@ -7,6 +7,5 @@
         "url": "https://digitalvision.cz"
     },
     "main": "tsconfig.json",
-    "repository": "https://github.com/digitalvisioncz/project-linters",
-    "gitHead": "9d9031702a65974c0e7389440f235b34c9eb1e4d"
+    "repository": "https://github.com/digitalvisioncz/project-linters"
 }
