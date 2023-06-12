@@ -15,8 +15,5 @@
     "eslint-plugin-react-hooks": "^4.3.0"
   },
   "repository": "https://github.com/digitalvisioncz/project-linters",
-  "devDependencies": {
-    "lerna": "^7.0.0"
-  },
   "gitHead": "9d9031702a65974c0e7389440f235b34c9eb1e4d"
 }
