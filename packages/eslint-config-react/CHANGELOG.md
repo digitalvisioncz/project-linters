@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.0.6](https://github.com/digitalvisioncz/project-linters/compare/@dvdevcz/eslint-config-react@0.0.5...@dvdevcz/eslint-config-react@0.0.6) (2023-06-13)
+
+
+### Bug Fixes
+
+* **eslint-config-react:** correct package to extend from ([5952251](https://github.com/digitalvisioncz/project-linters/commit/595225191fb5cd6368616b4d4b02cc986c0b4bad))
+
+
+
+
+
 ## [0.0.5](https://github.com/digitalvisioncz/project-linters/compare/@dvdevcz/eslint-config-react@0.0.3...@dvdevcz/eslint-config-react@0.0.5) (2023-06-12)
 
 **Note:** Version bump only for package @dvdevcz/eslint-config-react
