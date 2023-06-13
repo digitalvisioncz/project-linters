@@ -6,7 +6,7 @@ module.exports = {
         },
     },
     extends: [
-        '@digitalvisioncz/eslint-config-base',
+        '@dvdevcz/eslint-config-base',
         'plugin:react/recommended',
         'plugin:jsx-a11y/recommended',
     ],
