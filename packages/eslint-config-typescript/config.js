@@ -6,7 +6,7 @@ const {rules: baseImportsRules} = require('eslint-config-airbnb-base/rules/impor
 
 module.exports = {
     extends: [
-        '@digitalvisioncz/eslint-config-base',
+        '@dvdevcz/eslint-config-base',
         "plugin:@typescript-eslint/eslint-recommended",
         "plugin:@typescript-eslint/recommended",
     ],
