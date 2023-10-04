@@ -9,8 +9,8 @@
   "main": "./config.js",
   "dependencies": {
     "@dvdevcz/eslint-config-base": "^0.0.3",
-    "@typescript-eslint/eslint-plugin": "^5.27.1",
-    "@typescript-eslint/parser": "^5.27.1",
+    "@typescript-eslint/eslint-plugin": "^6.0.0",
+    "@typescript-eslint/parser": "^6.0.0",
     "eslint-config-airbnb-base": "^15.0.0"
   },
   "repository": "https://github.com/digitalvisioncz/project-linters"
