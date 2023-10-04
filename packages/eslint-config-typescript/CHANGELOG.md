@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.1.0](https://github.com/digitalvisioncz/project-linters/compare/@dvdevcz/eslint-config-typescript@0.0.5...@dvdevcz/eslint-config-typescript@0.1.0) (2023-10-04)
+
+
+### Features
+
+* **eslint-config-typescript:** bump ts-eslint plugin and parser version ([d7bc2cf](https://github.com/digitalvisioncz/project-linters/commit/d7bc2cf9261f305114f0596fa35c898185c386c8))
+
+
+
+
+
 ## [0.0.5](https://github.com/digitalvisioncz/project-linters/compare/@dvdevcz/eslint-config-typescript@0.0.4...@dvdevcz/eslint-config-typescript@0.0.5) (2023-06-13)
 
 
