@@ -5,14 +5,23 @@
     "name": "Digital Vision CZ",
     "url": "https://digitalvision.cz"
   },
-  "packageManager": "yarn@4.1.1",
+  "packageManager": "yarn@4.2.2",
   "workspaces": [
     "packages/*"
   ],
+  "scripts": {
+    "start:all": "lerna run start --parallel"
+  },
   "devDependencies": {
     "@commitlint/cli": "^17.6.5",
     "@commitlint/config-conventional": "^17.6.5",
+    "@eslint/js": "^9.3.0",
+    "@stylistic/eslint-plugin": "^2.1.0",
+    "@types/eslint__js": "^8.42.3",
+    "eslint": "^9.3.0",
     "husky": "^8.0.3",
-    "lerna": "^7.0.0"
+    "lerna": "^7.0.0",
+    "typescript": "^5.4.5",
+    "typescript-eslint": "^7.11.0"
   }
 }
