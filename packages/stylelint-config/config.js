@@ -2,8 +2,8 @@ module.exports = {
     extends: 'stylelint-config-recommended',
     plugins: [
         'stylelint-order',
-        'stylelint-a11y',
-        'stylelint-csstree-validator',
+        '@double-great/stylelint-a11y',
+        '@carlosjeurissen/stylelint-csstree-validator',
     ],
     ignoreFiles: ['**/*.js', '**/*.jsx'],
     rules: {
