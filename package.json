@@ -10,7 +10,8 @@
     "packages/*"
   ],
   "scripts": {
-    "start:all": "lerna run start --parallel"
+    "start:all": "lerna run start --parallel",
+    "build:all": "lerna run build --parallel"
   },
   "devDependencies": {
     "@commitlint/cli": "^17.6.5",

@@ -8,7 +8,8 @@
   },
   "type": "commonjs",
   "scripts": {
-    "start": "rollup --config=rollup.config.mts --configPlugin=rollup-plugin-esbuild --watch"
+    "start": "rollup --config=rollup.config.mts --configPlugin=rollup-plugin-esbuild --watch",
+    "build": "rollup --config=rollup.config.mts --configPlugin=rollup-plugin-esbuild"
   },
   "exports": {
     ".": {
@@ -17,6 +18,9 @@
     },
     "./package.json": "./package.json"
   },
+  "files": [
+    "dist"
+  ],
   "types": "./dist/index.d.ts",
   "repository": "https://github.com/digitalvisioncz/project-linters",
   "dependencies": {
