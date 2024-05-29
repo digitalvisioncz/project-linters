@@ -1,0 +1,36 @@
+{
+  "name": "@dvdevcz/eslint",
+  "version": "0.0.1",
+  "licence": "MIT",
+  "author": {
+    "name": "Digital Vision CZ",
+    "url": "https://digitalvision.cz"
+  },
+  "type": "commonjs",
+  "scripts": {
+    "start": "rollup --config=rollup.config.mts --configPlugin=rollup-plugin-esbuild --watch"
+  },
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "default": "./dist/index.js"
+    },
+    "./package.json": "./package.json"
+  },
+  "types": "./dist/index.d.ts",
+  "repository": "https://github.com/digitalvisioncz/project-linters",
+  "dependencies": {
+    "@eslint/js": "^9.2.0",
+    "typescript-eslint": "^7.8.0"
+  },
+  "peerDependencies": {
+    "eslint": "^9.2.0"
+  },
+  "devDependencies": {
+    "@rollup/plugin-commonjs": "^25.0.8",
+    "esbuild": "^0.21.4",
+    "eslint": "^9.3.0",
+    "rollup": "^4.18.0",
+    "rollup-plugin-esbuild": "^6.1.1"
+  }
+}

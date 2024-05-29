@@ -67,14 +67,14 @@ To add a pre-commit task:
 yarn add husky lint-staged -D
 ```
 
-2. Automatically install pre-commit hook and add script to your package.json
+2. Automatically install the pre-commit hook and add a script to your package.json
 ```sh
 npx husky install && \
 npx husky add .husky/pre-commit "yarn pre-commit" && \
 npx npm-add-script -k pre-commit -v "lint-staged"
 ```
 
-3. Create `.lintstagedrc` and add the following code (omit stylelint if it's not needed)
+3. Create `.lintstagedrc` and add the following code (omit a stylelint if it's not needed)
 ```json
 {
     "*.{js,jsx}": [

@@ -1,28 +1,28 @@
-const {rules: baseStyleRules} = require('eslint-config-airbnb-base/rules/style');
-const {rules: baseBestPracticesRules} = require('eslint-config-airbnb-base/rules/best-practices');
-const {rules: baseErrorsRules} = require('eslint-config-airbnb-base/rules/errors');
-const {rules: baseVariablesRules} = require('eslint-config-airbnb-base/rules/variables');
-const {rules: baseImportsRules} = require('eslint-config-airbnb-base/rules/imports');
+const { rules: baseStyleRules } = require('eslint-config-airbnb-base/rules/style');
+const { rules: baseBestPracticesRules } = require('eslint-config-airbnb-base/rules/best-practices');
+const { rules: baseErrorsRules } = require('eslint-config-airbnb-base/rules/errors');
+const { rules: baseVariablesRules } = require('eslint-config-airbnb-base/rules/variables');
+const { rules: baseImportsRules } = require('eslint-config-airbnb-base/rules/imports');
 
 module.exports = {
     extends: [
         '@dvdevcz/eslint-config-base',
-        "plugin:@typescript-eslint/eslint-recommended",
-        "plugin:@typescript-eslint/recommended",
+        'plugin:@typescript-eslint/eslint-recommended',
+        'plugin:@typescript-eslint/recommended',
     ],
-    parser: "@typescript-eslint/parser",
+    parser: '@typescript-eslint/parser',
     ignorePatterns: ['.eslintrc', '.eslintrc.js'],
     settings: {
         'import/resolver': {
             node: {
                 extensions: [
-                    '.js', 
-                    '.jsx', 
-                    '.mjs', 
-                    '.ts', 
-                    '.tsx', 
-                    '.mts', 
-                    '.json'
+                    '.js',
+                    '.jsx',
+                    '.mjs',
+                    '.ts',
+                    '.tsx',
+                    '.mts',
+                    '.json',
                 ],
             },
         },
@@ -42,15 +42,15 @@ module.exports = {
         'react/prop-types': 'off',
         '@typescript-eslint/type-annotation-spacing': [
             'error', {
-                'before': false,
-                'after': true,
+                before: false,
+                after: true,
                 overrides: {
                     arrow: {
                         before: true,
-                        after: true
-                    }
-                }
-            }
+                        after: true,
+                    },
+                },
+            },
         ],
         'comma-dangle': 'off',
         '@typescript-eslint/comma-dangle': [
@@ -95,16 +95,16 @@ module.exports = {
         'no-use-before-define': 'off',
         '@typescript-eslint/no-use-before-define': baseVariablesRules['no-use-before-define'],
 
-        quotes: 'off',
+        'quotes': 'off',
         '@typescript-eslint/quotes': baseStyleRules.quotes,
 
-        semi: 'off',
+        'semi': 'off',
         '@typescript-eslint/semi': baseStyleRules.semi,
 
         'object-curly-spacing': 'off',
         '@typescript-eslint/object-curly-spacing': ['error', 'never'],
 
-        camelcase: 'off',
+        'camelcase': 'off',
         '@typescript-eslint/naming-convention': [
             'error',
             {
@@ -143,26 +143,26 @@ module.exports = {
             },
         ],
 
-        "@typescript-eslint/member-delimiter-style": [
-            "warn",
+        '@typescript-eslint/member-delimiter-style': [
+            'warn',
             {
-                "multiline": {
-                    "delimiter": "comma",
-                    "requireLast": true
+                multiline: {
+                    delimiter: 'comma',
+                    requireLast: true,
                 },
-                "singleline": {
-                    "delimiter": "semi",
-                    "requireLast": false
-                }
-            }
+                singleline: {
+                    delimiter: 'semi',
+                    requireLast: false,
+                },
+            },
         ],
 
-        "space-infix-ops": "off",
-        "@typescript-eslint/space-infix-ops": ["error"],
+        'space-infix-ops': 'off',
+        '@typescript-eslint/space-infix-ops': ['error'],
         'no-shadow': 'off',
         '@typescript-eslint/no-shadow': ['error'],
 
-        "@typescript-eslint/no-floating-promises": "error",
-        '@typescript-eslint/no-explicit-any': "warn",
+        '@typescript-eslint/no-floating-promises': 'error',
+        '@typescript-eslint/no-explicit-any': 'warn',
     },
 };
