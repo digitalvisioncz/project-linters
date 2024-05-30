@@ -2,6 +2,7 @@ import pluginBase from '@typescript-eslint/eslint-plugin';
 import * as parserBase from '@typescript-eslint/parser';
 import type {TSESLint} from '@typescript-eslint/utils';
 import baseConfig from './configs/base';
+import reactConfig from './configs/react';
 
 const parser: TSESLint.FlatConfig.Parser = {
     meta: parserBase.meta,
@@ -13,7 +14,10 @@ const plugin: TSESLint.FlatConfig.Plugin = pluginBase as Omit<
     'configs'
 >;
 
-const configs = {base: baseConfig(plugin, parser)};
+const configs = {
+    base: baseConfig(plugin, parser),
+    react: reactConfig(plugin, parser),
+};
 
 export type Config = TSESLint.FlatConfig.ConfigFile;
 

@@ -1,5 +1,4 @@
 import fs from 'node:fs/promises'
-import { basename, dirname } from 'node:path'
 import { defineConfig } from 'rollup'
 import commonjs from '@rollup/plugin-commonjs'
 import esbuild from 'rollup-plugin-esbuild'
@@ -18,9 +17,7 @@ export default defineConfig({
                 if (id.includes('configs'))
                     return 'configs'
                 if (id.includes('rules')) {
-                    const name = basename(dirname(id))
-                    if (name !== 'rules')
-                        return name
+                    return 'rules'
                 }
             },
             chunkFileNames: '[name].js',
