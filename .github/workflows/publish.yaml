@@ -4,6 +4,9 @@ on:
     types: [closed]
     branches:
       - main
+  push:
+    branches:
+      - main
 
 jobs:
   publish:
@@ -41,6 +44,9 @@ jobs:
 
     - name: "Build"
       run: yarn build:all
+
+    - name: "Clean"
+      run: rm -rf .yarn/install-state.gz
 
     - name: "Version and publish"
       run: |
