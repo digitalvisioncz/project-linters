@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.2.0](https://github.com/digitalvisioncz/project-linters/compare/@dvdevcz/eslint-config-typescript@0.1.2...@dvdevcz/eslint-config-typescript@0.2.0) (2024-05-30)
+
+
+### Features
+
+* **eslint:** add eslint flat config ([308ba32](https://github.com/digitalvisioncz/project-linters/commit/308ba326fe97e81742b99996cff5f7a913520232))
+
+
+
+
+
 ## [0.1.2](https://github.com/digitalvisioncz/project-linters/compare/@dvdevcz/eslint-config-typescript@0.1.1...@dvdevcz/eslint-config-typescript@0.1.2) (2024-04-16)
 
 
