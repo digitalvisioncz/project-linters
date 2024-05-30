@@ -43,7 +43,9 @@ jobs:
       run: yarn build:all
 
     - name: "Clean"
-      run: rm -rf .yarn/install-state.gz
+      run: |
+        git update-index --assume-unchanged .npmrc
+        git update-index --assume-unchanged .yarn/install-state.gz
 
     - name: "Version and publish"
       run: |
