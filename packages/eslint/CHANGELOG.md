@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.1.1](https://github.com/digitalvisioncz/project-linters/compare/@dvdevcz/eslint@0.1.0...@dvdevcz/eslint@0.1.1) (2024-05-30)
+
+
+### Bug Fixes
+
+* **eslint:** add globals and eslint as dependency ([92cd69f](https://github.com/digitalvisioncz/project-linters/commit/92cd69fbbe20ee9ac399716541aa53a24dd24766))
+
+
+
+
+
 # 0.1.0 (2024-05-30)
 
 
