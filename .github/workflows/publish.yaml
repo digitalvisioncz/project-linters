@@ -42,11 +42,6 @@ jobs:
     - name: "Build"
       run: yarn build:all
 
-    - name: "Clean"
-      run: |
-        git update-index --assume-unchanged .npmrc
-        git update-index --assume-unchanged .yarn/install-state.gz
-
     - name: "Version and publish"
       run: |
         npx lerna version --yes --conventional-commits --create-release github --message 'chore(release): publish'
