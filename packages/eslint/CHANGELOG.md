@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.2.1](https://github.com/digitalvisioncz/project-linters/compare/@dvdevcz/eslint@0.2.0...@dvdevcz/eslint@0.2.1) (2024-06-03)
+
+
+### Bug Fixes
+
+* **eslint:** add correct ts and types build ([716ae67](https://github.com/digitalvisioncz/project-linters/commit/716ae67efc88fc28c47914037e64d37cb02de566))
+
+
+
+
+
 # [0.2.0](https://github.com/digitalvisioncz/project-linters/compare/@dvdevcz/eslint@0.1.2...@dvdevcz/eslint@0.2.0) (2024-05-30)
 
 
