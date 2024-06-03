@@ -27,17 +27,18 @@ export default (
                 },
             },
         },
+        settings: {
+            react: {
+                version: 'detect',
+            },
+        },
         plugins: {
             '@typescript-eslint': plugin,
             '@stylistic': stylistic,
             'react-hooks': reactHooks,
         },
-        files: [
-            '**/*.ts',
-            '**/*.tsx',
-            '**/*.js',
-            '**/*.jsx',
-        ],
+
+        files: ['**/*.{jsx,tsx}'],
         rules: {
             // JSX
             ...rules.jsx,
