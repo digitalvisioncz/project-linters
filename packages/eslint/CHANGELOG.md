@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.2.0](https://github.com/digitalvisioncz/project-linters/compare/@dvdevcz/eslint@0.1.2...@dvdevcz/eslint@0.2.0) (2024-05-30)
+
+
+### Features
+
+* **eslint:** add jsx rules ([6165b31](https://github.com/digitalvisioncz/project-linters/commit/6165b31fcc4c0be1007128c0ca856823f095f434))
+
+
+
+
+
 ## [0.1.2](https://github.com/digitalvisioncz/project-linters/compare/@dvdevcz/eslint@0.1.1...@dvdevcz/eslint@0.1.2) (2024-05-30)
 
 
