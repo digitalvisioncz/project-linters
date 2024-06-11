@@ -133,6 +133,19 @@ export default (
             '@stylistic/wrap-regex': 'error',
         },
     },
+    // ts files
+    {
+        files: ['**/*.ts', '**/*.tsx'],
+        rules: {
+            "@typescript-eslint/no-misused-promises": [
+                "error",
+                {
+                    "checksVoidReturn": false,
+                }
+,            ],
+            "@typescript-eslint/no-explicit-any": "warn"
+        }
+    },
     {
         files: ['**/*.js'],
         ...tseslint.configs.disableTypeChecked,
