@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.3.1](https://github.com/digitalvisioncz/project-linters/compare/@dvdevcz/eslint@0.3.0...@dvdevcz/eslint@0.3.1) (2024-06-12)
+
+
+### Bug Fixes
+
+* **eslint:** turn off react/prop-types fot tsx files ([2faec92](https://github.com/digitalvisioncz/project-linters/commit/2faec92f0cb220de1a7ae8ad1cc87da5db1131af))
+
+
+
+
+
 # [0.3.0](https://github.com/digitalvisioncz/project-linters/compare/@dvdevcz/eslint@0.2.1...@dvdevcz/eslint@0.3.0) (2024-06-11)
 
 
