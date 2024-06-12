@@ -10,7 +10,6 @@ export default (
     parser: FlatConfig.Parser,
 ): FlatConfig.ConfigArray => [
     {ignores: ['**/build/**', '**/dist/**']},
-    reactRecommended,
     {
         name: '@dvdevcz/eslint/react',
         languageOptions: {
@@ -37,14 +36,16 @@ export default (
             '@stylistic': stylistic,
             'react-hooks': reactHooks,
         },
-
         files: ['**/*.{jsx,tsx}'],
         rules: {
             // JSX
             ...rules.jsx,
-
-            'react/jsx-uses-react': 'off',
-            'react/react-in-jsx-scope': 'off',
         },
     },
+    {
+        files: ['**/*.tsx'],
+        rules: {
+             'react/prop-types': 'off',
+        },
+    }
 ];
