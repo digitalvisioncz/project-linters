@@ -3,7 +3,7 @@ const jsxRules = {
     'react/jsx-key': 'error',
     'react/jsx-no-comment-textnodes':  'error',
     'react/jsx-no-duplicate-props':  'error',
-    'react/jsx-no-target-blank':  'warning',
+    'react/jsx-no-target-blank':  'warn',
     'react/jsx-no-undef':  'error',
     'react/jsx-uses-vars': 'error',
     'react/no-children-prop': 'error',

@@ -1,5 +1,5 @@
 import tseslint from 'typescript-eslint';
-import dvdevEslint from './packages/eslint-config/dist/index.js';
+import dvdevEslint from './packages/eslint/dist/index.js';
 
 export default tseslint.config(
     ...dvdevEslint.configs.base,

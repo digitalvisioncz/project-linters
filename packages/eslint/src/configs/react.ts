@@ -2,6 +2,7 @@ import type {FlatConfig} from '@typescript-eslint/utils/ts-eslint';
 import globals from 'globals';
 import stylistic from '@stylistic/eslint-plugin';
 import reactRecommended from 'eslint-plugin-react/configs/recommended';
+import react from 'eslint-plugin-react';
 import reactHooks from 'eslint-plugin-react-hooks';
 import rules from '../rules/rules';
 
@@ -34,6 +35,7 @@ export default (
         plugins: {
             '@typescript-eslint': plugin,
             '@stylistic': stylistic,
+            react: react,
             'react-hooks': reactHooks,
         },
         files: ['**/*.{jsx,tsx}'],
