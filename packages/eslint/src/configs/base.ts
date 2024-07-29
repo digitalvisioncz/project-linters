@@ -29,7 +29,6 @@ export default (
             },
         },
         plugins: {
-            '@typescript-eslint': plugin,
             '@stylistic': stylistic,
         },
         files: [
