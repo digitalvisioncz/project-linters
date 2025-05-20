@@ -2,13 +2,10 @@
 Currently, we are using the following configs:
 
 ### Eslint
-`@dvdevcz/eslint-config-base`  
-`@dvdevcz/eslint-config-react` *for React projects*
-`@dvdevcz/eslint-config-typescript` *for Typescript projects*
-> **_NOTE:_**  React config and typescript already contains base config, so there is no need to install both
+`@dvdevcz/eslint`  
 
 ### Stylelint
-`@dvdevcz/stylelint-config` *with PostCss*
+`@dvdevcz/stylelint`
 
 #### TSconfig
 `@dvdevcz/typescript-config`
@@ -20,35 +17,36 @@ In the project where you want to use linters, do the following:
 
 1. Install required linter config(s)
 ```sh
-yarn add -D @dvdevcz/eslint-config-base
+yarn add -D @dvdevcz/eslint
 # OR
-yarn add -D @dvdevcz/eslint-config-react
-# OR
-yarn add -D @dvdevcz/eslint-config-typescript
-# OR
-yarn add -D @dvdevcz/stylelint-config
+yarn add -D @dvdevcz/stylelint
 # OR
 yarn add -D @dvdevcz/typescript-config
 ```
 
-2. Add following to your package.json (or add `extends` to your `.eslintrc` or `.stylelintrc` config)
+2. Add the config to your linter setup:
+
+#### For ESLint (Flat Config)
+If you are using the new ESLint Flat Config (eslint.config.mjs):
+
 ```js
-"eslint": {
-  "extends": [
-      // in case of Typescript
-      "@dvdevcz/eslint-config-typescript",
-      // in case of React
-      "@dvdevcz/eslint-config-react",
-      // in case of NodeJs
-      "@dvdevcz/eslint-config-base",
-  ]
-}
+import dvdevEslint from '@dvdevcz/eslint';
+
+export default [
+    ...dvdevEslint.configs.base, // or .react
+];
 ```
+You can choose the config variant you need (`base` or `react`, TS included in both).
+
+#### For Stylelint
+Add the following to your package.json (or `stylelint.config.mjs`):
 ```js
-"stylelint": {
-  "extends": "@dvdevcz/stylelint-config/config"
-}
+export default {
+    extends: ['@dvdevcz/stylelint'],
+};
+
 ```
+
 3. In a typescript project, add the following to your tsconfig.json
 ```json
 {
