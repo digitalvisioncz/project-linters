@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.4.0](https://github.com/digitalvisioncz/project-linters/compare/@dvdevcz/eslint@0.3.3...@dvdevcz/eslint@0.4.0) (2025-05-20)
+
+
+### Features
+
+* **eslint:** add eslint order ([4d842e8](https://github.com/digitalvisioncz/project-linters/commit/4d842e8b5ec63d8986b69e98addd84c1c38d82b2))
+
+
+
+
+
 ## [0.3.3](https://github.com/digitalvisioncz/project-linters/compare/@dvdevcz/eslint@0.3.2...@dvdevcz/eslint@0.3.3) (2024-07-29)
 
 
