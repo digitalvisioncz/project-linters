@@ -3,6 +3,7 @@ import eslint from '@eslint/js';
 import globals from 'globals';
 import stylistic from '@stylistic/eslint-plugin';
 import tseslint from 'typescript-eslint';
+import simpleImportSort from 'eslint-plugin-simple-import-sort';
 import rules from '../rules/rules';
 
 export default (
@@ -30,6 +31,7 @@ export default (
         },
         plugins: {
             '@stylistic': stylistic,
+            'simple-import-sort': simpleImportSort,
         },
         files: [
             '**/*.ts',
@@ -130,6 +132,10 @@ export default (
             ],
             '@stylistic/semi-style': ['error', 'last'],
             '@stylistic/wrap-regex': 'error',
+
+            // Import
+            'simple-import-sort/imports': 'error',
+            'simple-import-sort/exports': 'error',
         },
     },
     // ts files
