@@ -1,4 +1,5 @@
 import fs from "node:fs/promises";
+import { fileURLToPath } from "node:url";
 import { defineConfig } from "rollup";
 import commonjs from "@rollup/plugin-commonjs";
 import esbuild from "rollup-plugin-esbuild";
@@ -14,7 +15,7 @@ export default defineConfig([
     output: [
       {
         dir: "dist",
-        format: "cjs",
+        format: "es",
         manualChunks(id) {
           if (id.includes("util")) return "utils";
           if (id.includes("configs")) return "configs";
@@ -35,6 +36,6 @@ export default defineConfig([
   {
     input: "./src/index.ts",
     output: [{ file: "dist/index.d.ts", format: "es" }],
-    plugins: [dts()],
+    plugins: [dts({ tsconfig: fileURLToPath(new URL("./tsconfig.build.json", import.meta.url)) })],
   },
 ]);

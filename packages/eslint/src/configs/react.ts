@@ -1,7 +1,6 @@
 import type {FlatConfig} from '@typescript-eslint/utils/ts-eslint';
 import globals from 'globals';
 import stylistic from '@stylistic/eslint-plugin';
-import reactRecommended from 'eslint-plugin-react/configs/recommended';
 import react from 'eslint-plugin-react';
 import reactHooks from 'eslint-plugin-react-hooks';
 import rules from '../rules/rules';
@@ -14,7 +13,7 @@ export default (
     {
         name: '@dvdevcz/eslint/react',
         languageOptions: {
-            ...reactRecommended.languageOptions,
+            ...react.configs.recommended.languageOptions,
             parser,
             globals: {
                 ...globals.browser,
@@ -29,7 +28,7 @@ export default (
         },
         settings: {
             react: {
-                version: 'detect',
+                version: '19.0',
             },
         },
         plugins: {

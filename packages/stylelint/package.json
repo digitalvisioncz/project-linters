@@ -6,7 +6,7 @@
     "name": "Digital Vision CZ",
     "url": "https://digitalvision.cz"
   },
-  "type": "commonjs",
+  "type": "module",
   "scripts": {
     "start": "rollup --config=rollup.config.mts --configPlugin=rollup-plugin-esbuild --watch",
     "build": "rollup --config=rollup.config.mts --configPlugin=rollup-plugin-esbuild"
@@ -24,11 +24,11 @@
   "types": "./dist/index.d.ts",
   "repository": "https://github.com/digitalvisioncz/project-linters",
   "dependencies": {
-    "@carlosjeurissen/stylelint-csstree-validator": "^3.1.0",
-    "@stylistic/stylelint-plugin": "^2.1.2",
-    "stylelint": "^16.6.1",
-    "stylelint-config-clean-order": "^6.0.0",
-    "stylelint-order": "^6.0.4"
+    "@stylistic/stylelint-plugin": "^5.0.0",
+    "stylelint": "^17.0.0",
+    "stylelint-config-clean-order": "^10.0.0",
+    "stylelint-csstree-validator": "^4.0.0",
+    "stylelint-order": "^8.0.0"
   },
   "devDependencies": {
     "@rollup/plugin-commonjs": "^25.0.8",

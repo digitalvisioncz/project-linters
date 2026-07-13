@@ -6,7 +6,7 @@
     "name": "Digital Vision CZ",
     "url": "https://digitalvision.cz"
   },
-  "type": "commonjs",
+  "type": "module",
   "scripts": {
     "start": "rollup --config=rollup.config.mts --configPlugin=rollup-plugin-esbuild --watch",
     "build": "rollup --config=rollup.config.mts --configPlugin=rollup-plugin-esbuild"
@@ -24,17 +24,18 @@
   "types": "./dist/index.d.ts",
   "repository": "https://github.com/digitalvisioncz/project-linters",
   "dependencies": {
-    "@eslint/js": "^9.2.0",
-    "@stylistic/eslint-plugin": "^2.1.0",
-    "@typescript-eslint/eslint-plugin": "^7.11.0",
-    "@typescript-eslint/parser": "^8.32.1",
-    "eslint": "^8.56.0",
-    "eslint-plugin-import": "^2.31.0",
-    "eslint-plugin-react": "^7.34.2",
-    "eslint-plugin-react-hooks": "^4.6.2",
-    "eslint-plugin-simple-import-sort": "^12.1.1",
-    "globals": "^15.3.0",
-    "typescript-eslint": "^7.11.0"
+    "@eslint/js": "^10.0.0",
+    "@stylistic/eslint-plugin": "^5.0.0",
+    "@typescript-eslint/utils": "^8.0.0",
+    "eslint": "^10.0.0",
+    "eslint-plugin-react": "^7.37.5",
+    "eslint-plugin-react-hooks": "^5.2.0",
+    "eslint-plugin-simple-import-sort": "^13.0.0",
+    "globals": "^17.0.0",
+    "typescript-eslint": "^8.0.0"
+  },
+  "peerDependencies": {
+    "typescript": ">=4.8.4 <6.1.0"
   },
   "devDependencies": {
     "@rollup/plugin-commonjs": "^25.0.8",

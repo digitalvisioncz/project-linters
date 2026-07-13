@@ -47,20 +47,9 @@ const jsxRules = {
     '@stylistic/jsx-equals-spacing': ['error', 'never'],
     '@stylistic/jsx-first-prop-new-line': ['error', 'multiline'],
     '@stylistic/jsx-function-call-newline': ['error', 'multiline'],
-    '@stylistic/jsx-indent': ['error', 4],
+    '@stylistic/indent': ['error', 4],
     '@stylistic/jsx-indent-props': ['error', 4],
-    '@stylistic/jsx-max-props-per-line': [
-        'error', {
-            maximum: {
-                single: 2,
-                multi: 1,
-            },
-        },
-    ],
-    '@stylistic/jsx-newline': ['error', {prevent: true}],
-    // '@stylistic/jsx-one-expression-per-line': ['error', {allow: 'non-jsx'}],
-    '@stylistic/jsx-pascal-case': ['error', {allowNamespace: true}],
-    '@stylistic/jsx-props-no-multi-spaces': 'error',
+    '@stylistic/no-multi-spaces': 'error',
     '@stylistic/jsx-quotes': ['error', 'prefer-double'],
     '@stylistic/jsx-self-closing-comp': [
         'error', {
