@@ -14,7 +14,7 @@ export default defineConfig([
     output: [
       {
         dir: "dist",
-        format: "cjs",
+        format: "es",
         chunkFileNames: "[name].js",
       },
     ],

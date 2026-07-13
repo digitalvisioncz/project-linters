@@ -8,7 +8,7 @@ const propertiesOrder = propertyGroups.map(properties => ({
 
 export default {
     extends: ['stylelint-config-clean-order'],
-    plugins: ['@carlosjeurissen/stylelint-csstree-validator', '@stylistic/stylelint-plugin'],
+    plugins: ['stylelint-csstree-validator', '@stylistic/stylelint-plugin'],
     ignoreFiles: [
         '**/*.js',
         '**/*.jsx',
