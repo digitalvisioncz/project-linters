@@ -1,0 +1,54 @@
+# yaml-language-server: $schema=https://moonrepo.dev/schemas/project.json
+$schema: 'https://moonrepo.dev/schemas/project.json'
+
+# Repository-wide workflows; run them as `moon run root:<task>`.
+# Linting runs once from the root over the whole repo. The root configs import the
+# local TS sources of @dvdevcz/linters directly (Node strips the types), so no build
+# is needed first.
+tasks:
+  lint:
+    script: 'oxlint && eslint .'
+    options:
+      cache: false
+
+  lint-fix:
+    script: 'oxlint --fix && eslint . --fix'
+    options:
+      cache: false
+
+  typecheck:
+    command: 'tsc -p .'
+    options:
+      cache: false
+
+  # Used by lint-staged with the staged file paths appended.
+  oxlint-fix:
+    command: 'oxlint --fix'
+    options:
+      cache: false
+
+  eslint-fix:
+    command: 'eslint --fix'
+    options:
+      cache: false
+
+  # Git hooks (.moon/workspace.yml).
+  staged:
+    command: 'lint-staged'
+    options:
+      cache: false
+
+  commitlint:
+    command: 'commitlint'
+    options:
+      cache: false
+
+  # CI only (.github/workflows/publish.yaml): version, tag and publish changed packages.
+  release:
+    script: |
+      lerna version --yes --conventional-commits --create-release github --message 'chore(release): publish'
+      lerna publish from-package --no-verify-access --yes
+    deps: ['linters:build']
+    options:
+      cache: false
+      runInCI: true

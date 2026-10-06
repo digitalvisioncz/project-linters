@@ -1,14 +1,17 @@
 {
   "compilerOptions": {
     "types": [
-      "@types/node"
+      "node"
     ],
     "outDir": "dist",
-    "target": "ES2020",
+    "target": "ES2022",
     "noEmit": true,
     "allowJs": true,
-    "moduleResolution": "NodeNext",
-    "module": "NodeNext",
+    "allowImportingTsExtensions": true,
+    "erasableSyntaxOnly": true,
+    "moduleResolution": "Bundler",
+    "module": "ESNext"
   },
-  "include": ["**/*.ts", "**/*.tsx", "**/*.d.ts", "eslint.config.mjs", "**/rollup.config.mts"],
+  "include": ["**/*.ts", "**/*.tsx", "**/*.d.ts", "**/*.mts"],
+  "exclude": ["node_modules", "**/node_modules", "**/dist"]
 }

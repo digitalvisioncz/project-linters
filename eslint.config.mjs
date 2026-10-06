@@ -1,7 +1,7 @@
-import tseslint from 'typescript-eslint';
+// The repo lints itself with the local sources of @dvdevcz/linters (not the built package).
+import dvdevEslint from './packages/linters/src/eslint/index.ts';
 
-import dvdevEslint from './packages/eslint/dist/index.js';
-
-export default tseslint.config(
-    ...dvdevEslint.configs.base,
-);
+export default [
+    {ignores: ['**/node_modules/**']},
+    ...dvdevEslint,
+];

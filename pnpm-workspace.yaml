@@ -1,0 +1,6 @@
+packages:
+  - 'packages/*'
+allowBuilds:
+  esbuild: true
+  # nx (pulled in by lerna) only builds its optional daemon helpers.
+  nx: false
