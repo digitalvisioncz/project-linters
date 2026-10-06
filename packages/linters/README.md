@@ -4,7 +4,8 @@ Shared lint configs of Digital Vision CZ in one package:
 
 | Entry point | What it is |
 | --- | --- |
-| `@dvdevcz/linters/oxlint` | [oxlint](https://oxc.rs) config — correctness + type-aware TypeScript rules |
+| `@dvdevcz/linters/oxlint` | [oxlint](https://oxc.rs) config — correctness + type-aware TypeScript, import, promise and Vitest rules |
+| `@dvdevcz/linters/oxlint/react` | the oxlint config + React (hooks, React Compiler, react-perf) and jsx-a11y rules |
 | `@dvdevcz/linters/eslint` | ESLint flat config — stylistic rules only (formatting, import sorting) |
 | `@dvdevcz/linters/stylelint/base` | stylelint config — CSS ordering and style |
 | `@dvdevcz/linters/stylelint/guards` | opt-in stylelint guards against hard-coded lengths and hex colors |
@@ -46,6 +47,15 @@ run on tsgolint (the Go port of TypeScript) and are not affected. Projects still
 ```ts
 export {default} from '@dvdevcz/linters/oxlint';
 ```
+
+React projects use the React variant instead (it includes everything from the base config):
+
+```ts
+export {default} from '@dvdevcz/linters/oxlint/react';
+```
+
+React Compiler rules (`react/purity`, `react/refs`, `react/set-state-in-effect`, …) are experimental in oxlint and
+report warnings.
 
 Extend it when a project needs more:
 
