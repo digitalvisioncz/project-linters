@@ -23,6 +23,7 @@ const config: OxlintConfig = defineConfig({
         {
             // Tests hold long scenario tables.
             files: ['**/*.test.{ts,tsx}', '**/*.spec.{ts,tsx}'],
+            plugins: ['vitest'],
             rules: {
                 'eslint/max-lines': 'off',
             },
@@ -54,7 +55,9 @@ const config: OxlintConfig = defineConfig({
         },
     ],
     plugins: [
+        'import',
         'oxc',
+        'promise',
         'typescript',
         'unicorn',
     ],
@@ -82,6 +85,18 @@ const config: OxlintConfig = defineConfig({
         'eslint/prefer-spread': 'error',
         'eslint/prefer-arrow-callback': 'error',
         'eslint/preserve-caught-error': 'error',
+        // TypeScript already checks default and namespace imports.
+        'import/default': 'off',
+        'import/namespace': 'off',
+        'import/no-absolute-path': 'error',
+        'import/no-cycle': 'error',
+        'import/no-duplicates': 'error',
+        'import/no-self-import': 'error',
+        'import/no-webpack-loader-syntax': 'error',
+        'promise/no-multiple-resolved': 'error',
+        'promise/no-promise-in-callback': 'warn',
+        'promise/no-return-in-finally': 'error',
+        'promise/param-names': 'error',
         'typescript/ban-ts-comment': 'error',
         'typescript/no-empty-object-type': 'error',
         'typescript/no-explicit-any': 'warn',

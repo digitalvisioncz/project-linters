@@ -13,8 +13,12 @@
       "default": "./dist/eslint/index.js"
     },
     "./oxlint": {
-      "types": "./dist/oxlint.d.ts",
-      "default": "./dist/oxlint.js"
+      "types": "./dist/oxlint/index.d.ts",
+      "default": "./dist/oxlint/index.js"
+    },
+    "./oxlint/react": {
+      "types": "./dist/oxlint/react.d.ts",
+      "default": "./dist/oxlint/react.js"
     },
     "./stylelint/base": {
       "types": "./dist/stylelint/base.d.ts",
