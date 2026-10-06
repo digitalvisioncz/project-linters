@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.2.3](https://github.com/digitalvisioncz/project-linters/compare/@dvdevcz/linters@0.2.2...@dvdevcz/linters@0.2.3) (2026-10-06)
+
+
+### Bug Fixes
+
+* **linters:** integration findings ([f82c0a4](https://github.com/digitalvisioncz/project-linters/commit/f82c0a4cfa35f5ce80bbaf20e78e3d8e3ccf2ce5))
+
+
+
+
+
 ## [0.2.2](https://github.com/digitalvisioncz/project-linters/compare/@dvdevcz/linters@0.2.1...@dvdevcz/linters@0.2.2) (2026-10-06)
 
 **Note:** Version bump only for package @dvdevcz/linters
