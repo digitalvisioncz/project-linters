@@ -20,7 +20,8 @@ const lineBreaks: Linter.RulesRecord = {
     '@stylistic/implicit-arrow-linebreak': ['error', 'beside'],
     '@stylistic/linebreak-style': ['error', 'unix'],
     '@stylistic/lines-between-class-members': ['error', 'always'],
-    '@stylistic/multiline-comment-style': ['error', 'starred-block'],
+    // Line comments keep oxlint/eslint directives standalone; JSDoc blocks are left alone.
+    '@stylistic/multiline-comment-style': ['error', 'separate-lines'],
     '@stylistic/newline-per-chained-call': ['error', {ignoreChainWithDepth: 3}],
     '@stylistic/object-curly-newline': [
         'error',

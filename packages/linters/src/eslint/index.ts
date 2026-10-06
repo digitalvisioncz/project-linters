@@ -76,7 +76,8 @@ const config: Linter.Config[] = [
                     conditionalAssign: false,
                     nestedBinaryExpressions: false,
                     ignoreJSX: 'all',
-                    ignoredNodes: ['ArrowFunctionExpression[body.type="ConditionalExpression"]'],
+                    // Allow wrapping a long arrow body in parens instead of fighting semi-style.
+                    ignoredNodes: ['ArrowFunctionExpression[body.type=/^(ConditionalExpression|BinaryExpression|LogicalExpression)$/]'],
                 },
             ],
             '@stylistic/no-extra-semi': 'error',
