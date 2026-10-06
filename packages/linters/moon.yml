@@ -1,0 +1,19 @@
+# yaml-language-server: $schema=https://moonrepo.dev/schemas/project.json
+$schema: 'https://moonrepo.dev/schemas/project.json'
+
+# Config-only package (ESLint, oxlint, stylelint configs), written in TS and
+# compiled to dist/ by tsc. The root lint tasks load the configs from dist/.
+tasks:
+  build:
+    # tsc never cleans outDir; a stale file would otherwise ship (and land in moon's cache).
+    script: 'rm -rf dist && tsc -p tsconfig.build.json'
+    inputs:
+      - 'src/**/*'
+      - 'tsconfig.build.json'
+      - 'package.json'
+    outputs:
+      - 'dist'
+
+  start:
+    command: 'tsc -p tsconfig.build.json --watch'
+    preset: 'server'
