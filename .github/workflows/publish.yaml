@@ -5,6 +5,12 @@ on:
     branches:
       - main
 
+# npm trusted publishing (OIDC): no npm token, npm trusts this workflow file instead
+# (configured per package on npmjs.com -> Settings -> Trusted publishing).
+permissions:
+  contents: read
+  id-token: write
+
 jobs:
   publish:
     if: github.event.pull_request.merged == true
@@ -12,8 +18,6 @@ jobs:
     env:
       GH_TOKEN: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
       GITHUB_TOKEN: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
-      NPM_TOKEN: ${{ secrets.NPM_PUBLISH_TOKEN }}
-      NODE_AUTH_TOKEN: ${{ secrets.NPM_PUBLISH_TOKEN }}
 
     steps:
     - uses: actions/checkout@v4
@@ -28,17 +32,13 @@ jobs:
       uses: actions/setup-node@v4
       with:
         node-version: '24'
-        cache: 'pnpm'
+        registry-url: 'https://registry.npmjs.org'
 
     - name: Config git user
       run: |
         git config --global user.name "${{ github.actor }}"
         git config --global user.email "${{ github.actor }}@users.noreply.github.com"
         git remote set-url origin https://${{ github.actor }}:${{ secrets.PERSONAL_ACCESS_TOKEN }}@github.com/${{ github.repository }}
-
-    - name: "NPM Identity"
-      run: |
-        echo "//registry.npmjs.org/:_authToken=$NPM_TOKEN" > .npmrc
 
     # Installs proto + the moon version pinned in .prototools.
     - name: "Use moon"
