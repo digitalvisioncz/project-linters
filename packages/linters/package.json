@@ -30,6 +30,9 @@
     "dist"
   ],
   "repository": "https://github.com/digitalvisioncz/project-linters",
+  "publishConfig": {
+    "access": "public"
+  },
   "dependencies": {
     "@stylistic/eslint-plugin": "^5.10.0",
     "@stylistic/stylelint-plugin": "^5.3.0",

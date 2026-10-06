@@ -47,7 +47,7 @@ tasks:
   release:
     script: |
       lerna version --yes --conventional-commits --create-release github --message 'chore(release): publish'
-      lerna publish from-package --no-verify-access --yes
+      lerna publish from-package --yes
     deps: ['linters:build']
     options:
       cache: false
