@@ -4,6 +4,9 @@ on:
     types: [closed]
     branches:
       - main
+  # Manual run on main: versions nothing new, but publishes any version that is
+  # tagged in git and missing on npm (e.g. after a failed publish).
+  workflow_dispatch:
 
 # npm trusted publishing (OIDC): no npm token, npm trusts this workflow file instead
 # (configured per package on npmjs.com -> Settings -> Trusted publishing).
@@ -13,7 +16,7 @@ permissions:
 
 jobs:
   publish:
-    if: github.event.pull_request.merged == true
+    if: github.event_name == 'workflow_dispatch' || github.event.pull_request.merged == true
     runs-on: ubuntu-latest
     env:
       GH_TOKEN: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
