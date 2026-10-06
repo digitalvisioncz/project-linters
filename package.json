@@ -1,27 +1,27 @@
 {
   "name": "@dvdevcz/project-linters",
+  "private": true,
+  "type": "module",
   "licence": "MIT",
   "author": {
     "name": "Digital Vision CZ",
     "url": "https://digitalvision.cz"
   },
-  "packageManager": "yarn@4.2.2",
-  "workspaces": [
-    "packages/*"
-  ],
-  "scripts": {
-    "start:all": "lerna run start --parallel",
-    "build:all": "lerna run build --parallel"
+  "engines": {
+    "node": ">=24.12.0",
+    "pnpm": ">=11.0.0"
   },
+  "packageManager": "pnpm@11.17.0",
   "devDependencies": {
     "@commitlint/cli": "^17.6.5",
     "@commitlint/config-conventional": "^17.6.5",
-    "@eslint/js": "^10.0.0",
-    "eslint": "^10.0.0",
-    "husky": "^8.0.3",
-    "lerna": "^7.0.0",
-    "rollup-plugin-dts": "^6.1.1",
-    "typescript": "^5.4.5",
-    "typescript-eslint": "^8.0.0"
+    "@types/node": "^24.13.1",
+    "@typescript/native": "npm:typescript@^7.0.2",
+    "eslint": "^10.11.0",
+    "lerna": "^9.0.0",
+    "lint-staged": "^16.0.0",
+    "oxlint": "^1.83.0",
+    "oxlint-tsgolint": "^7.0.2001",
+    "typescript": "npm:@typescript/typescript6@^6.0.2"
   }
 }

@@ -1,0 +1,21 @@
+# yaml-language-server: $schema=https://moonrepo.dev/schemas/workspace.json
+$schema: 'https://moonrepo.dev/schemas/workspace.json'
+
+# Projects are auto-discovered from these globs. Project id = folder name,
+# so tasks are addressed as `eslint:build`, `stylelint:build`, `root:lint`, ...
+projects:
+  globs:
+    - 'packages/*'
+  sources:
+    root: '.'
+
+vcs:
+  defaultBranch: 'main'
+  # moon owns the git hooks (replaces husky). `sync: true` (re)installs them on
+  # every `moon run`, so the first task run after a clone sets them up.
+  hooks:
+    pre-commit:
+      - 'moon run root:staged'
+    commit-msg:
+      - 'moon run root:commitlint -- --edit $ARG1'
+  sync: true

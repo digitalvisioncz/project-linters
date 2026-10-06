@@ -1,86 +1,54 @@
 # DV-specific code linters configs
-Currently, we are using the following configs:
 
-### Eslint
-`@dvdevcz/eslint`  
+Monorepo with the lint configs used across Digital Vision CZ projects.
 
-### Stylelint
-`@dvdevcz/stylelint`
+| Package | Description |
+| --- | --- |
+| [`@dvdevcz/linters`](packages/linters) | oxlint + ESLint (stylistic) + stylelint configs in one package |
+| [`@dvdevcz/typescript-config`](packages/typescript-config) | Shared `tsconfig.json` |
 
-#### TSconfig
-`@dvdevcz/typescript-config`
+`@dvdevcz/eslint`, `@dvdevcz/stylelint`, `@dvdevcz/eslint-config-*` and `@dvdevcz/stylelint-config` are deprecated and
+no longer developed here (their last versions stay on npm; the sources are in the git history). Use `@dvdevcz/linters`.
 
-## How to use
+See the [`@dvdevcz/linters` README](packages/linters/README.md) for installation and config.
 
-### Install and config
-In the project where you want to use linters, do the following:
+### TSconfig
 
-1. Install required linter config(s)
-```sh
-yarn add -D @dvdevcz/eslint
-# OR
-yarn add -D @dvdevcz/stylelint
-# OR
-yarn add -D @dvdevcz/typescript-config
-```
-
-2. Add the config to your linter setup:
-
-#### For ESLint (Flat Config)
-If you are using the new ESLint Flat Config (eslint.config.mjs):
-
-```js
-import dvdevEslint from '@dvdevcz/eslint';
-
-export default [
-    ...dvdevEslint.configs.base, // or .react
-];
-```
-You can choose the config variant you need (`base` or `react`, TS included in both).
-
-#### For Stylelint
-Add the following to your package.json (or `stylelint.config.mjs`):
-```js
-export default {
-    extends: ['@dvdevcz/stylelint'],
-};
-
-```
-
-3. In a typescript project, add the following to your tsconfig.json
 ```json
 {
   "extends": "@dvdevcz/typescript-config"
 }
-
 ```
-## Adding a pre-commit hook
 
-Linting makes more sense when running before committing the code.
+Since TypeScript 6 the `types` option defaults to `[]` — list global type packages explicitly, e.g. `"types": ["node"]`.
 
-To add a pre-commit task:
+## Development
 
-1. Install [Husky](https://typicode.github.io/husky/#/) and [lint-staged]()
+Requirements: [proto](https://moonrepo.dev/proto) (installs [moon](https://moonrepo.dev) in the version pinned in
+`.prototools`), Node 24 and pnpm 11 (`corepack enable` picks the version from `packageManager`).
+TypeScript 7 (`tsc`) builds and type-checks; TypeScript 6 is installed alongside as `typescript` for typescript-eslint
+(see [TypeScript](packages/linters/README.md#typescript)).
+
+All workflows are moon tasks — there are no package.json scripts. moon installs the dependencies (`pnpm install`)
+whenever the lockfile or a manifest changes, and installs the git hooks on every run, so a fresh clone only needs:
+
 ```sh
-yarn add husky lint-staged -D
+moon run root:lint        # oxlint + eslint over the whole repo
+moon run root:lint-fix
+moon run root:typecheck   # tsc (TypeScript 7)
+moon run :build           # build all packages (@dvdevcz/linters -> dist/)
+moon run linters:start    # tsc --watch while working on the configs
 ```
 
-2. Automatically install the pre-commit hook and add a script to your package.json
-```sh
-npx husky install && \
-npx husky add .husky/pre-commit "yarn pre-commit" && \
-npx npm-add-script -k pre-commit -v "lint-staged"
-```
+The repo lints itself with the local sources of `@dvdevcz/linters`: `oxlint.config.ts` and `eslint.config.mjs` import
+`packages/linters/src/*.ts` directly (Node 24 strips the types), so config changes apply immediately, without a build.
+The package itself is compiled to `dist/` by `tsc` only for publishing (`moon run linters:build`). Inside `src/`,
+relative imports use the `.ts` extension; `tsc` rewrites them to `.js` (`rewriteRelativeImportExtensions`).
 
-3. Create `.lintstagedrc` and add the following code (omit a stylelint if it's not needed)
-```json
-{
-    "*.{js,jsx}": [
-      "eslint --cache --fix"
-    ],
-    "*.css": [
-      "stylelint --cache --fix --color --formatter verbose"
-    ]
-}
+Git hooks (configured in `.moon/workspace.yml`):
 
-```
+- `pre-commit` — `moon run root:staged` → lint-staged runs `moon run root:oxlint-fix` and `root:eslint-fix` on staged files
+- `commit-msg` — `moon run root:commitlint` ([Conventional Commits](https://www.conventionalcommits.org))
+
+Releases are published from `main` by GitHub Actions (`moon run root:release` → lerna, independent versioning,
+conventional commits). Only `@dvdevcz/linters` and `@dvdevcz/typescript-config` are published.

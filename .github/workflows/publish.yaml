@@ -21,10 +21,14 @@ jobs:
         persist-credentials: false
         fetch-depth: 0
 
-    - name: "Use NodeJS 20"
+    - name: "Use pnpm"
+      uses: pnpm/action-setup@v4
+
+    - name: "Use NodeJS 24"
       uses: actions/setup-node@v4
       with:
-        node-version: '20'
+        node-version: '24'
+        cache: 'pnpm'
 
     - name: Config git user
       run: |
@@ -36,13 +40,14 @@ jobs:
       run: |
         echo "//registry.npmjs.org/:_authToken=$NPM_TOKEN" > .npmrc
 
-    - name: "Install dependencies"
-      run: yarn
+    # Installs proto + the moon version pinned in .prototools.
+    - name: "Use moon"
+      uses: moonrepo/setup-toolchain@v0
 
-    - name: "Build"
-      run: yarn build:all && git restore .
+    # moon installs the dependencies (pnpm, frozen lockfile in CI) and builds
+    # @dvdevcz/linters before the checks.
+    - name: "Lint and typecheck"
+      run: moon run root:lint root:typecheck
 
     - name: "Version and publish"
-      run: |
-        npx lerna version --yes --conventional-commits --create-release github --message 'chore(release): publish'
-        npx lerna publish from-package --no-verify-access --yes
+      run: moon run root:release

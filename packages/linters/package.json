@@ -1,0 +1,73 @@
+{
+  "name": "@dvdevcz/linters",
+  "version": "0.1.0",
+  "licence": "MIT",
+  "author": {
+    "name": "Digital Vision CZ",
+    "url": "https://digitalvision.cz"
+  },
+  "type": "module",
+  "exports": {
+    "./eslint": {
+      "types": "./dist/eslint/index.d.ts",
+      "default": "./dist/eslint/index.js"
+    },
+    "./oxlint": {
+      "types": "./dist/oxlint.d.ts",
+      "default": "./dist/oxlint.js"
+    },
+    "./stylelint/base": {
+      "types": "./dist/stylelint/base.d.ts",
+      "default": "./dist/stylelint/base.js"
+    },
+    "./stylelint/guards": {
+      "types": "./dist/stylelint/guards.d.ts",
+      "default": "./dist/stylelint/guards.js"
+    },
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "dist"
+  ],
+  "repository": "https://github.com/digitalvisioncz/project-linters",
+  "dependencies": {
+    "@stylistic/eslint-plugin": "^5.10.0",
+    "@stylistic/stylelint-plugin": "^5.3.0",
+    "@typescript-eslint/utils": "^8.71.0",
+    "eslint-plugin-simple-import-sort": "^13.0.0",
+    "stylelint-config-clean-order": "^6.1.0",
+    "stylelint-order": "^8.1.1",
+    "typescript-eslint": "^8.71.0"
+  },
+  "peerDependencies": {
+    "eslint": "^10.0.0",
+    "oxlint": "^1.83.0",
+    "oxlint-tsgolint": ">=7.0.0",
+    "stylelint": "^17.15.0",
+    "typescript": ">=4.8.4 <6.1.0"
+  },
+  "peerDependenciesMeta": {
+    "eslint": {
+      "optional": true
+    },
+    "oxlint": {
+      "optional": true
+    },
+    "oxlint-tsgolint": {
+      "optional": true
+    },
+    "stylelint": {
+      "optional": true
+    },
+    "typescript": {
+      "optional": true
+    }
+  },
+  "devDependencies": {
+    "@typescript/native": "npm:typescript@^7.0.2",
+    "eslint": "^10.12.0",
+    "oxlint": "^1.86.0",
+    "stylelint": "^17.16.0",
+    "typescript": "npm:@typescript/typescript6@^6.0.2"
+  }
+}

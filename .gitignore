@@ -1,10 +1,6 @@
 node_modules
 dist
 .npmrc
-.yarn/*
-!.yarn/cache
-!.yarn/patches
-!.yarn/plugins
-!.yarn/releases
-!.yarn/sdks
-!.yarn/versions
+.eslintcache
+.moon/cache
+.moon/hooks

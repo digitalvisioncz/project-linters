@@ -1,0 +1,6 @@
+{
+  "*.{ts,tsx,mts,cts,js,jsx,mjs,cjs}": [
+    "moon run root:oxlint-fix --",
+    "moon run root:eslint-fix --"
+  ]
+}

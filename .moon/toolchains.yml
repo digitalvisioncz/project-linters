@@ -1,0 +1,14 @@
+# yaml-language-server: $schema=https://moonrepo.dev/schemas/toolchain.json
+$schema: 'https://moonrepo.dev/schemas/toolchain.json'
+
+# moon 2.x reads `.moon/toolchains.yml` (plural). The javascript + node toolchains
+# make moon detect package.json projects and prepend node_modules/.bin to PATH, so
+# `tsc`, `eslint`, `oxlint` resolve inside tasks. With pnpm as the package manager,
+# moon runs `pnpm install` itself before tasks whenever the lockfile or a manifest
+# changes, so `moon run ...` works right after a fresh clone.
+# No versions pinned -> moon uses the system node/pnpm (engines + packageManager in
+# package.json stay the source of truth).
+javascript:
+  packageManager: 'pnpm'
+node: {}
+pnpm: {}
