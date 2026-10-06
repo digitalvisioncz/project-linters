@@ -29,7 +29,11 @@
   "files": [
     "dist"
   ],
-  "repository": "https://github.com/digitalvisioncz/project-linters",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/digitalvisioncz/project-linters.git",
+    "directory": "packages/linters"
+  },
   "publishConfig": {
     "access": "public"
   },
