@@ -1,10 +1,8 @@
-/*
- * When a bracketed list is broken across lines, every item and the closing
- * bracket must start on their own line. Complements
- * `object-curly-newline` / `array-bracket-newline`, which only move the brackets.
- * Covers objects, arrays, destructuring, import/export specifiers and type literals.
- * Indentation of the moved items is left to `@stylistic/indent`.
- */
+// When a bracketed list is broken across lines, every item and the closing
+// bracket must start on their own line. Complements
+// `object-curly-newline` / `array-bracket-newline`, which only move the brackets.
+// Covers objects, arrays, destructuring, import/export specifiers and type literals.
+// Indentation of the moved items is left to `@stylistic/indent`.
 import {
     AST_NODE_TYPES,
     type TSESLint,
@@ -22,10 +20,8 @@ type ListNode =
     | TSESTree.ExportNamedDeclaration
     | TSESTree.TSTypeLiteral;
 
-/*
- * Lists this long are checked whenever their brackets span lines; shorter ones
- * only once an item already starts on a new line (so `{a, b}` stays inline).
- */
+// Lists this long are checked whenever their brackets span lines; shorter ones
+// only once an item already starts on a new line (so `{a, b}` stays inline).
 const MIN_ITEMS_ALWAYS_CHECKED = 3;
 
 const getItems = (node: ListNode): TSESTree.Node[] => {

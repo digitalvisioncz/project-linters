@@ -9,15 +9,18 @@ const propertiesOrder = propertyGroups.map(properties => ({
     properties,
 }));
 
+// Exported so projects can extend it; overriding `ignoreFiles` replaces the list.
+export const ignoreFiles: string[] = [
+    '**/*.js',
+    '**/*.jsx',
+    '**/*.ts',
+    '**/*.tsx',
+    '**/node_modules/**',
+];
+
 const index: Config = {
     plugins: [...stylelintOrder, ...stylisticPlugin],
-    ignoreFiles: [
-        '**/*.js',
-        '**/*.jsx',
-        '**/*.ts',
-        '**/*.tsx',
-        '**/node_modules/**',
-    ],
+    ignoreFiles,
     rules: {
         ...stylelintConfigCleanOrder.rules,
         // recommended

@@ -73,12 +73,13 @@ export default [
 ### stylelint — `stylelint.config.js`
 
 ```js
-import base from '@dvdevcz/linters/stylelint/base';
+import base, {ignoreFiles} from '@dvdevcz/linters/stylelint/base';
 import guards from '@dvdevcz/linters/stylelint/guards';
 
 export default {
     ...base,
-    ignoreFiles: ['**/dist/**'],
+    // Overriding ignoreFiles replaces the defaults (JS/TS sources, node_modules), so extend them.
+    ignoreFiles: [...ignoreFiles, '**/dist/**'],
     // Hold only the paths that already follow the token ladder to the guards.
     ...guards(['src/**/*.module.css']),
 };
